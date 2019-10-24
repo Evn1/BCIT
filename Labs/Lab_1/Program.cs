@@ -47,6 +47,61 @@ namespace Lab
                     }
                 }
             }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                double d = b * b - 4 * a * c;
+                if (d < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Действительных корней нет");
+                }
+                if (d == 0)
+                {
+                    x1 = -b / (2 * a);
+                    if (x1 < 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Действительных корней нет");
+                    }
+                    else
+                    {
+                        x1 = Math.Sqrt(x1);
+                        Console.WriteLine($"Уравнение имеет два корня: {x1} , {x1}");
+                    }
+                }
+
+                else if (d > 0)
+                {
+                    x1 = (-b + Math.Sqrt(d)) / (2 * a);
+                    x2 = (-b - Math.Sqrt(d)) / (2 * a);
+                    if ((x1 < 0) & (x2 < 0))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Действительных корней нет");
+                    }
+                    else if ((x1 < 0) || (x2 < 0))
+                    {
+                        if (x1 < 0)
+                        {
+                            x2 = Math.Sqrt(x2);
+                            Console.WriteLine($"Уравнение имеет два корня: {x2} , {-x2}");
+                        }
+                        else
+                        {
+                            x1 = Math.Sqrt(x1);
+                            Console.WriteLine($"Уравнение имеет два корня: {x1} , {-x1}");
+                        }
+                    }
+                    else
+                    {
+                        x1 = Math.Sqrt(x1);
+                        x2 = Math.Sqrt(x2);
+                        Console.WriteLine($"Уравнение имеет четыре корня: {x1} ,  {-x1} , {x2} , {-x2}");
+                    }
+                }
+            }
+            Console.ResetColor();
         }
     }
 }
