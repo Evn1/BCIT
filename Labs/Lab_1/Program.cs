@@ -5,8 +5,8 @@ namespace Lab
     {
         static void Main(string[] args)
         {
-            double x1, x2, a, b, c;
-            do
+            double x1, x2, a = 0, b = 0, c = 0;
+            if (args.Length == 0)
             {
                 while (true)
                 {
@@ -20,6 +20,23 @@ namespace Lab
                         Console.ResetColor();
                     }
                 }
+            }
+            else if (args.Length == 3)
+            {
+                Double.TryParse(args[0], out a);
+                Double.TryParse(args[1], out b);
+                Double.TryParse(args[2], out c);
+                args = null;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Неверное колличество аргументов в командной строке");
+                Console.ReadKey();
+                return;
+            }
+            do
+            {
                 if (a == 0 || b == 0 || c == 0)
                 {
                     if ((a == 0 && b == 0) || (-c / b < 0) || (-c / a < 0))
