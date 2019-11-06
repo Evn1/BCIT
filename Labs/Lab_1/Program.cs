@@ -17,12 +17,13 @@ namespace Lab
                         Double.TryParse(args[2], out c);
                         args = null;
                     }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Неверный формат данных\n");
-                    Console.ResetColor();
-                }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Неверное колличество аргументов командной строки");
+                        Console.ReadKey();
+                        return;
+                    }
                 }
                 else
                 {
