@@ -8,6 +8,9 @@ namespace Lab
             double x1, x2, a = 0, b = 0, c = 0;
             do
             {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Ведьгун Егор Алексеевич\nИУ5-34Б\n");
+                Console.ResetColor();
                 if (args.Length != 0)
                 {
                     if (args.Length == 3)
