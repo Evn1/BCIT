@@ -12,6 +12,7 @@ namespace Lab_2
             r1.Print();
             q1.Print();
             c1.Print();
+            Console.ReadKey();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab_2
 {
-    class Quadrate : Rectangle
+    class Quadrate : Rectangle, IPrint
     {
         public double length { get; set; }
         public Quadrate(double Length)

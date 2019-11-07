@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab_2
 {
-    class Circle : Geometric_figure
+    class Circle : Geometric_figure , IPrint
     {
         public double radius { get; set; }
         public Circle(double Radius)

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab_2
 {
-    abstract class Geometric_figure: IPrint
+    abstract class Geometric_figure
     {
         public void Print()
         {
