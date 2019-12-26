@@ -4,8 +4,18 @@ using System.Text;
 
 namespace Lab_2
 {
-    abstract class Geometric_figure
+    public abstract class Geometric_figure:IComparable
     {
+        public int CompareTo(object obj)
+        {
+            var gf = (Geometric_figure)obj;
+            if (this.Square() > gf.Square())
+                return 1;
+            else if (this.Square() < gf.Square())
+                return -1;
+            else
+                return 0;
+        }
         public void Print()
         {
             Console.WriteLine(ToString());

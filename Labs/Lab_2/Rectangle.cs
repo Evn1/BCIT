@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab_2
 {
-    class Rectangle : Geometric_figure, IPrint
+    public class Rectangle : Geometric_figure, IPrint
     {
         public double width { get; set; }
         public double height { get; set; }
@@ -14,6 +14,6 @@ namespace Lab_2
             height = Height;
         }
         public override double Square() => (width * height);
-        public override string ToString() => ($"~~~~Rectangle~~~~\nwidth: {width}\nheight: {height}\nsquare: {Square()}\n");
+        public override string ToString() => ($"S(прямоугольника)={Square()}\n");
     }
 }

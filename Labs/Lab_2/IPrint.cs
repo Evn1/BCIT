@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab_2
 {
-    interface IPrint
+    public interface IPrint
     {
         void Print();
     }
