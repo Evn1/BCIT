@@ -6,60 +6,66 @@ using System.Threading.Tasks;
 
 namespace Lab_5
 {
-    class Levenshtein
+    public class Levenshtein
     {
-        public static int Distance(string s1, string s2)
+        public static int Distance(string str1Param, string str2Param)
         {
-            int len1 = s1.Length, len2 = s2.Length;
-            if (len1 == 0 || len2 == 0)
-                return Math.Max(len1, len2);
-            string tmp1 = s1.ToUpper();
-            string tmp2 = s2.ToUpper();
+            if ((str1Param == null) || (str2Param == null)) return -1;
 
-            int[,] d = new int[len1 + 1, len2 + 1];
-            for (int i = 0; i <= len1; ++i) d[i, 0] = i;
-            for (int j = 0; j <= len2; ++j) d[0, j] = j;
+            int str1Len = str1Param.Length;
+            int str2Len = str2Param.Length;
 
-            for (int i = 1; i <= len1; ++i)
-                for (int j = 1; j <= len2; ++j)
-                {
-                    int indicator = (tmp1[i - 1] == tmp2[j - 1]) ? 0 : 1;
+            //Если хотя бы одна строка пустая,      
+            //возвращается длина другой строки     
+            if ((str1Len == 0) && (str2Len == 0)) return 0;
+            if (str1Len == 0) return str2Len;
+            if (str2Len == 0) return str1Len;
 
-                    d[i, j] = Math.Min(
-                    d[i - 1, j] + 1,
-                    Math.Min(d[i, j - 1] + 1,
-                    d[i - 1, j - 1] + indicator)
-                    );
+            //Приведение строк к верхнему регистру     
+            string str1 = str1Param.ToUpper();
+            string str2 = str2Param.ToUpper();
+
+            //Объявление матрицы     
+            int[,] matrix = new int[str1Len + 1, str2Len + 1];
+
+            //Инициализация нулевой строки и нулевого столбца матрицы     
+            for (int i = 0; i <= str1Len; i++) matrix[i, 0] = i;
+
+            for (int j = 0; j <= str2Len; j++) matrix[0, j] = j;
+
+            //Вычисление расстояния Дамерау-Левенштейна     
+            for (int i = 1; i <= str1Len; i++)
+            {
+                for (int j = 1; j <= str2Len; j++)
+                {             //Эквивалентность символов, переменная symbEqual             
+                              //соответствует m(s1[i],s2[j])            
+                    int symbEqual = (
+                        (str1.Substring(i - 1, 1) ==
+                        str2.Substring(j - 1, 1)) ? 0 : 1);
+
+                    int ins = matrix[i, j - 1] + 1;
+                    //Добавление             
+                    int del = matrix[i - 1, j] + 1;
+                    //Удаление             
+                    int subst = matrix[i - 1, j - 1] + symbEqual;
+                    //Замена 
+
+                    //Элемент матрицы вычисляется              
+                    //как минимальный из трех случаев             
+                    matrix[i, j] = Math.Min(Math.Min(ins, del), subst);
+
+                    //Дополнение Дамерау по перестановке соседних символов           
+                    if ((i > 1) && (j > 1) &&
+                        (str1.Substring(i - 1, 1) == str2.Substring(j - 2, 1)) &&
+                        (str1.Substring(i - 2, 1) == str2.Substring(j - 1, 1)))
+                    {
+                        matrix[i, j] = Math.Min(matrix[i, j],
+                            matrix[i - 2, j - 2] + symbEqual);
+                    }
                 }
-            return d[len1, len2];
+            }     //Возвращается нижний правый элемент матрицы     
+            return matrix[str1Len, str2Len];
         }
 
-        public static int DistanceDameray(string s1, string s2)
-        {
-            int len1 = s1.Length, len2 = s2.Length;
-            if (len1 == 0 || len2 == 0)
-                return Math.Max(len1, len2);
-            string tmp1 = s1.ToUpper();
-            string tmp2 = s2.ToUpper();
-
-            int[,] d = new int[len1 + 1, len2 + 1];
-            for (int i = 0; i <= len1; ++i) d[i, 0] = i;
-            for (int j = 0; j <= len2; ++j) d[0, j] = j;
-
-            for (int i = 1; i <= len1; ++i)
-                for (int j = 1; j <= len2; ++j)
-                {
-                    int indicator = (tmp1[i - 1] == tmp2[j - 1]) ? 0 : 1;
-
-                    d[i, j] = Math.Min(
-                    d[i, j - 1] + 1,
-                    Math.Min(d[i - 1, j] + 1,
-                    d[i - 1, j - 1] + indicator)
-                    );
-                    if (i > 1 && j > 1 && tmp1[i - 1] == tmp2[j - 2] && tmp1[i - 2] == tmp2[j - 1])
-                        d[i, j] = Math.Min(d[i, j], d[i - 2, j - 2] + indicator);
-                }
-            return d[len1, len2];
-        }
     }
 }
