@@ -41,14 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.LevDistanceResult = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.DistanceButton = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.LevDistance = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,95 +177,12 @@
             this.listBox1.Size = new System.Drawing.Size(168, 43);
             this.listBox1.TabIndex = 12;
             // 
-            // LevDistanceResult
-            // 
-            this.LevDistanceResult.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LevDistanceResult.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LevDistanceResult.FormattingEnabled = true;
-            this.LevDistanceResult.Items.AddRange(new object[] {
-            "..."});
-            this.LevDistanceResult.Location = new System.Drawing.Point(277, 342);
-            this.LevDistanceResult.Name = "LevDistanceResult";
-            this.LevDistanceResult.Size = new System.Drawing.Size(164, 43);
-            this.LevDistanceResult.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(274, 310);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 29);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Результат поиска расстояния\r\nЛевенштейна";
-            // 
-            // DistanceButton
-            // 
-            this.DistanceButton.AutoSize = true;
-            this.DistanceButton.BackColor = System.Drawing.Color.NavajoWhite;
-            this.DistanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DistanceButton.Location = new System.Drawing.Point(253, 391);
-            this.DistanceButton.Name = "DistanceButton";
-            this.DistanceButton.Size = new System.Drawing.Size(111, 27);
-            this.DistanceButton.TabIndex = 15;
-            this.DistanceButton.Text = "Поиск расстояния";
-            this.DistanceButton.UseVisualStyleBackColor = false;
-            this.DistanceButton.Click += new System.EventHandler(this.DistanceButton_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(301, 192);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(107, 25);
-            this.textBox6.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(286, 171);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 13);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Время поиска расстояния";
-            // 
-            // LevDistance
-            // 
-            this.LevDistance.Location = new System.Drawing.Point(0, 0);
-            this.LevDistance.Name = "LevDistance";
-            this.LevDistance.Size = new System.Drawing.Size(100, 20);
-            this.LevDistance.TabIndex = 21;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(193, 241);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(91, 32);
-            this.textBox5.TabIndex = 20;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(370, 395);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 33);
-            this.textBox7.TabIndex = 22;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.LevDistance);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.DistanceButton);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.LevDistanceResult);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -311,15 +220,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox LevDistanceResult;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button DistanceButton;
         private System.Windows.Forms.TextBox LevDistanceButton;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox LevDistance;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
     }
 }
 

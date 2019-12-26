@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using Lab_5;
+
 
 namespace Lab_4
 {
@@ -72,10 +72,6 @@ namespace Lab_4
             {
                 MessageBox.Show("Необходимо выбрать файл и ввести слово для поиска");
             }
-        }
-
-        private void DistanceButton_Click(object sender, EventArgs e)
-        {
         }
     }
 }
